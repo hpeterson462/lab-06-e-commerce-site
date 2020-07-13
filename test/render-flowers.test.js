@@ -1,11 +1,20 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
+import render-flowers from '../products/render-flowers.js';
 
 const test = QUnit.test;
 
 test('time to test a function', (expect) => {
     //Arrange
     // Set up your arguments and expectations
+    const iris = {
+        id: 'iris',
+        name: 'Bearded Iris',
+        image: 'iris.png',
+        description: 'A rainbow of showy flowers.',
+        category: 'spring',
+        price: 2.00
+    }
     const expected = true;
 
     //Act 

@@ -52,7 +52,7 @@ const peony = {
     price: 5.00
 };
 
-const Dahlia = {
+const dahlia = {
     id: 'dahlia',
     name: 'Waterlily Dahlia',
     image: 'dahlia.png',
