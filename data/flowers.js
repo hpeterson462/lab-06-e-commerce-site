@@ -61,3 +61,14 @@ const Dahlia = {
     price: 3.00
 };
 
+const flowers = [
+    iris,
+    rose,
+    daffodil,
+    sunflower,
+    daisy,
+    peony,
+    dahlia
+];
+
+export default flowers;
