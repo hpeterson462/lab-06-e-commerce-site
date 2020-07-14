@@ -1,0 +1,49 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+}
+
+img {
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    height: 100px;
+    width: auto;
+}
+
+#flowers {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#flowers li {
+    list-style: none;
+    position: relative;
+    background: white;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    width: 150px;
+    height: 200px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    box-shadow: 1px 1px 2px #ccc;
+}
+
+#flowers li button {
+    display: inline;
+    position: absolute;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#flowers li button:hover {
+    color: white;
+}
