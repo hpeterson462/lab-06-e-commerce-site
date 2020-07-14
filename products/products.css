@@ -3,6 +3,8 @@ nav {
     justify-content: space-around;
     align-items: center;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
 }
 
 img {
@@ -29,21 +31,28 @@ img {
     background: white;
     border: 1px solid #aaa;
     border-radius: 5px;
-    width: 150px;
-    height: 200px;
+    width: 200px;
+    height: 300px;
     margin-right: 5px;
     margin-bottom: 5px;
     text-align: center;
     box-shadow: 1px 1px 2px #ccc;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color5);
 }
 
 #flowers li button {
     display: inline;
-    position: absolute;
+    position: relative;
     margin: 5px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 #flowers li button:hover {
-    color: white;
+    background-color: var(--color5);
 }
