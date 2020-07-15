@@ -24,9 +24,10 @@ function renderFlowers(flowers) {
     buttonElement.textContent = 'Add';
     buttonElement.value = flowers.id;
     buttonElement.addEventListener('click', () => {
-        const cart = getCart();
 
-        const flowersInCart = findById(cart, flowers.id);
+        const userCart = getCart();
+
+        const flowersInCart = findById(userCart, flowers.id);
 
         if (flowersInCart) {
             flowersInCart.quantity++;
@@ -35,10 +36,12 @@ function renderFlowers(flowers) {
                 id: flowers.id,
                 quantity: 1
             };
-            cart.push(newFlower);
+            userCart.push(newFlower);
         }
-        const stringyCart = JSON.stringify(cart);
-        localStorage.setItem(cart, stringyCart);
+        const stringyCart = JSON.stringify(userCart);
+        localStorage.setItem('CART', stringyCart);
+
+        alert(`${flowers.name} has been added to your cart.`);
     });
 
     pElement.appendChild(buttonElement);

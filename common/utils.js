@@ -37,6 +37,7 @@ export function calcOrderTotal(cart, flowers) {
     return roundCurrency(orderTotal);
 }
 
+//shopping cart - if empty, initialize empty cart
 export function getCart() {
     const rawCart = localStorage.getItem('cart');
     let cart = JSON.parse(rawCart);
