@@ -32,7 +32,7 @@ export function calcOrderTotal(cart, flowers) {
         const cartItem = cart[i];
         const flower = findById(flowers, cartItem.id);
         const purchaseTotal = calcLineItem(cartItem.quantity, flower.price);
-        orderTotal += purchaseTotal;
+        orderTotal += orderTotal;
     }
     return roundCurrency(orderTotal);
 }
