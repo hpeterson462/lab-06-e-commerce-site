@@ -1,4 +1,4 @@
-import { /*getCart*/ findById } from '../common/utils.js';
+//import { getCart, findById } from '../common/utils.js';
 
 function renderFlowers(flowers) {
     const liElement = document.createElement('li');
