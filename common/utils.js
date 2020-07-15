@@ -39,7 +39,7 @@ export function calcOrderTotal(cart, flowers) {
 
 //shopping cart - if empty, initialize empty cart
 export function getCart() {
-    const rawCart = localStorage.getItem('cart');
+    const rawCart = localStorage.getItem('CART');
     let cart = JSON.parse(rawCart);
 
     if (!cart) {
