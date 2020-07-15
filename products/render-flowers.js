@@ -23,7 +23,7 @@ function renderFlowers(flowers) {
     const buttonElement = document.createElement('button');
     buttonElement.textContent = 'Add';
     buttonElement.value = flowers.id;
-    buttonElement.addEventLister('click', () => {
+    buttonElement.addEventListener('click', () => {
         const cart = getCart();
 
         const flowersInCart = findById(cart, flowers.id);
