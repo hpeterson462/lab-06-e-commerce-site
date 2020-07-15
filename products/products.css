@@ -1,10 +1,11 @@
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     text-decoration: none;
     font-weight: bold;
     font-size: 24px;
+    padding: 10px;
 }
 
 img {

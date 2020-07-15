@@ -64,13 +64,11 @@ test('calc item price', (expect) => {
 test('calc total order', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const cartItems = 29;
-    const flowerPrice = 18.00;
     const expected = 60.00;
 
     //Act 
     // Call the function you're testing and set the result to a const
-    const total = calcOrderTotal(cartItems, flowerPrice);
+    const total = calcOrderTotal(cart, flowers);
 
     //Expect
     // Make assertions about what is expected versus the actual result
