@@ -2,18 +2,29 @@ import { getCart } from '../common/utils.js';
 
 const test = QUnit.test;
 
-test('renders flower to DOM', (expect) => {
+test('add product to cart', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const
-    const expected = ;
+    const testCart = [
+        {
+            id: 'iris',
+            quantity: 2
+        },
+        {
+            id: 'rose',
+            quantity: 3
+        },
+    ];
+
+    const stringifyTestCart = JSON.stringify(testCart);
+    localStorage.setItem('cart', stringifyTestCart);
 
     //Act 
     // Call the function you're testing and set the result to a const
-    const dom = renderFlowers(iris);
-    const html = dom.outerHTML;
+    const cart = getCart();
+    const expected = testCart;
 
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.equal(,);
+    expect.deepEqual(cart, expected);
 });
