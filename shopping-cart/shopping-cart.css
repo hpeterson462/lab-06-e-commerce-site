@@ -1,0 +1,62 @@
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: var(--color3);
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color2);
+    font-weight: lighter;
+    font-size: 24px;
+}
+
+table {
+    width: 100%;
+    max-width: 750px;
+    margin: auto;
+    border: 1px solid #aaa;
+}
+
+thead {
+    background-color: var(--color2);
+    color: var(--color3);
+}
+
+table th, table td {
+    text-align: right;
+    padding: 10px;
+}
+
+.align-left {
+    text-align: left;
+}
+
+tbody {
+    background-color: var(--color4);
+}
+
+tbody tr:nth-child {
+    background-color: var(--color1);;
+}
+
+.line-item-total {
+    font-weight: bold;
+}
+
+tfoot {
+    background-color: #aaa;
+    color: var(--color5)
+}

@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
-import { findById, calcLineItem } from '../common/utils.js';
+import { findById, calcLineItem, calcOrderTotal } from '../common/utils.js';
 import cart from '../data/cart.js';
 import flowers from '../data/flowers.js';
 
@@ -64,15 +64,16 @@ test('calc item price', (expect) => {
 test('calc total order', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const totalOrder = 10;
+    const cart = 5;
+    const flowerPrice = 2;
     const expected = 10;
 
     //Act 
     // Call the function you're testing and set the result to a const
-    calcOrderTotal(cart, flowers);
+    const total = calcOrderTotal(cart, flowerPrice);
 
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.equal(totalOrder, expected);
+    expect.equal(total, expected);
 
 });
