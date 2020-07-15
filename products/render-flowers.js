@@ -37,8 +37,8 @@ function renderFlowers(flowers) {
             };
             cart.push(newFlower);
         }
-        const stringyCart = JSON.stringify('cart');
-        localStorage.setItem('cart', stringyCart);
+        const stringyCart = JSON.stringify(cart);
+        localStorage.setItem(cart, stringyCart);
     });
 
     pElement.appendChild(buttonElement);

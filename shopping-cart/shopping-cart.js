@@ -1,9 +1,9 @@
 import cart from '../data/cart.js';
 import flowers from '../data/flowers.js';
-import { findById, calcOrderTotal, toUSD /*getCart*/ } from '../common/utils.js';
+import { findById, calcOrderTotal, toUSD, getCart } from '../common/utils.js';
 import renderCartItem from './render-line-item.js';
 
-//const cart = getCart();
+const userCart = getCart();
 
 const tbodyEl = document.querySelector('tbody');
 const orderTotalCell = document.getElementById('order-total-cell');
@@ -16,5 +16,5 @@ for (let i = 0; i < cart.length; i++) {
     tbodyEl.append(dom);
 }
 
-const totalOrder = calcOrderTotal(cart, flowers);
+const totalOrder = calcOrderTotal(userCart, flowers);
 orderTotalCell.textContent = toUSD(totalOrder);
