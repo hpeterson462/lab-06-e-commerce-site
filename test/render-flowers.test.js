@@ -4,7 +4,7 @@ import renderFlowers from '../products/render-flowers.js';
 
 const test = QUnit.test;
 
-test('time to test a function', (expect) => {
+test('renders flower to DOM', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const iris = {
