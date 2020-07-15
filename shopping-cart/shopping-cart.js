@@ -1,9 +1,11 @@
 import cart from '../data/cart.js';
 import flowers from '../data/flowers.js';
-import { findById, calcOrderTotal, toUSD } from '../common/utilis-.js';
+import { findById, calcOrderTotal, toUSD /*getCart*/ } from '../common/utils.js';
 import renderCartItem from './render-line-item.js';
 
-const tbodyEl = document.getElementById('tbody');
+//const cart = getCart();
+
+const tbodyEl = document.querySelector('tbody');
 const orderTotalCell = document.getElementById('order-total-cell');
 
 for (let i = 0; i < cart.length; i++) {
