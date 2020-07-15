@@ -58,3 +58,21 @@ test('calc item price', (expect) => {
     expect.equal(total, expected);
 
 });
+
+
+//calcTotalOrder()
+test('calc total order', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const totalOrder = 10;
+    const expected = 10;
+
+    //Act 
+    // Call the function you're testing and set the result to a const
+    calcOrderTotal(cart, flowers);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(totalOrder, expected);
+
+});
