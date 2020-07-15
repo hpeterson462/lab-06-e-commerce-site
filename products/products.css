@@ -1,10 +1,11 @@
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     text-decoration: none;
     font-weight: bold;
     font-size: 24px;
+    padding: 10px;
 }
 
 img {
@@ -42,7 +43,13 @@ img {
 
 a {
     text-decoration: none;
-    color: var(--color5);
+    color: var(--color2);
+    font-weight: lighter;
+    font-size: 24px;
+}
+
+a:hover {
+    color: var(--color1);
 }
 
 #flowers li button {
@@ -54,5 +61,6 @@ a {
 }
 
 #flowers li button:hover {
-    background-color: var(--color5);
+    background-color: var(--color1);
+    opacity: 0.7;
 }

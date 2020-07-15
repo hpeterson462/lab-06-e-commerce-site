@@ -1,8 +1,8 @@
 body {
     --color1: #ff9e9e;
-    --color2: #f68b8b;
-    --color3: #fdc47d;
-    --color4: #ffd0d0;
+    --color2: #efefef;
+    --color3: #4f5b66;
+    --color4: #819c8b;
     --color5: #362d54;
 
     font-family: 'Open Sans Condensed', sans-serif;
@@ -15,7 +15,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--color3);
+    background-color: var(--color4);
     height: var(--header-height);
     box-shadow: var(--shadow);
 }
@@ -25,7 +25,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    background-color: var(--color2);
 }
 
 h1 {
@@ -33,28 +33,32 @@ h1 {
     align-items: center;
     justify-content: center;
     font-size: 36px;
-    color: var(--color5);
+    color: var(--color3);
+    font-weight: bold;
 }
 
 #main-img {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
+    height: 500px;
     width: auto;
     border-radius: 8px;
-    margin: 20px;
-    
+    margin: 10px;
 }
 
 button {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 10px; 
     padding: 5px;
     cursor: pointer;
+    border-radius: 5px;
+    color: var(--color3);
 }
 
 button:hover {
-    background-color: var(--color5);
+    background-color: var(--color4);
+    opacity: 0.7;
 }
