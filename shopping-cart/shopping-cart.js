@@ -1,15 +1,20 @@
 import flowers from '../data/flowers.js';
-import { findById, calcOrderTotal, toUSD, getCart } from '../common/utils.js';
+import {
+    findById,
+    calcOrderTotal,
+    toUSD,
+    getCart,
+    orderConfirmation
+} from '../common/utils.js';
 import renderCartItem from './render-line-item.js';
 
 const userCart = getCart();
-let cart = 0;
 
 const tbodyEl = document.querySelector('tbody');
 const orderTotalCell = document.getElementById('order-total-cell');
 
-for (let i = 0; i < cart.length; i++) {
-    const cartFlower = cart[i];
+for (let i = 0; i < userCart.length; i++) {
+    const cartFlower = userCart[i];
     const flowerProduct = findById(flowers, cartFlower.id);
     const dom = renderCartItem(cartFlower, flowerProduct);
 
@@ -22,12 +27,13 @@ orderTotalCell.textContent = toUSD(totalOrder);
 //place order
 const placeOrderButton = document.getElementById('place-order-button');
 
-if (cart.length === 0) {
+if (userCart.length === 0) {
     placeOrderButton.disabled = true;
 } else {
     placeOrderButton.addEventListener('click', () => {
+        alert(`Order Confirmation: ${orderConfirmation()}`);
         localStorage.removeItem('CART');
-        alert('Order:\n' + JSON.stringify(cart, true, 2));
+        alert('Thank you for purchasing!')
         window.location = '../';
     });
 }

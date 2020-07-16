@@ -1,4 +1,4 @@
-import { toUSD } from '../common/utils.js';
+import { toUSD, calcLineItem } from '../common/utils.js';
 
 function renderCartItem(cartItem, flower) {
     const trEl = document.createElement('tr');
@@ -18,7 +18,7 @@ function renderCartItem(cartItem, flower) {
 
     const totalCell = document.createElement('td');
     totalCell.className = 'line-item-total';
-    const total = cartItem.quantity * flower.price;
+    const total = calcLineItem(cartItem.quantity, flower.price);
     totalCell.textContent = toUSD(total);
     trEl.append(totalCell);
 
