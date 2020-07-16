@@ -3,17 +3,15 @@ import { findById, calcOrderTotal, toUSD, getCart } from '../common/utils.js';
 import renderCartItem from './render-line-item.js';
 
 const userCart = getCart();
-const rawCart = localStorage.getItem('CART');
 let cart = 0;
-
 
 const tbodyEl = document.querySelector('tbody');
 const orderTotalCell = document.getElementById('order-total-cell');
 
 for (let i = 0; i < cart.length; i++) {
-    const cartItem = cart[i];
-    const flower = findById(flowers, cartItem.id);
-    const dom = renderCartItem(cartItem, flower);
+    const cartFlower = cart[i];
+    const flowerProduct = findById(flowers, cartFlower.id);
+    const dom = renderCartItem(cartFlower, flowerProduct);
 
     tbodyEl.append(dom);
 }
@@ -28,8 +26,7 @@ if (cart.length === 0) {
     placeOrderButton.disabled = true;
 } else {
     placeOrderButton.addEventListener('click', () => {
-        localStorage.removeItem(placeOrderButton);
-        console.log(localStorage);
+        localStorage.removeItem('CART');
         alert('Order:\n' + JSON.stringify(cart, true, 2));
         window.location = '../';
     });
