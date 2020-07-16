@@ -33,7 +33,7 @@ if (userCart.length === 0) {
     placeOrderButton.addEventListener('click', () => {
         alert(`Order Confirmation: ${orderConfirmation()}`);
         localStorage.removeItem('CART');
-        alert('Thank you for purchasing!')
-        window.location = '../';
+        alert('Thank you for purchasing!');
+        window.location = '../products';
     });
 }
