@@ -17,7 +17,7 @@ test('add product to cart', (expect) => {
     ];
 
     const stringifyTestCart = JSON.stringify(testCart);
-    localStorage.setItem('cart', stringifyTestCart);
+    localStorage.setItem('CART', stringifyTestCart);
 
     //Act 
     // Call the function you're testing and set the result to a const

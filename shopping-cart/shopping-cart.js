@@ -3,7 +3,8 @@ import { findById, calcOrderTotal, toUSD, getCart } from '../common/utils.js';
 import renderCartItem from './render-line-item.js';
 
 const userCart = getCart();
-let cart;
+const rawCart = localStorage.getItem('CART');
+let cart = 0;
 
 
 const tbodyEl = document.querySelector('tbody');
@@ -27,7 +28,8 @@ if (cart.length === 0) {
     placeOrderButton.disabled = true;
 } else {
     placeOrderButton.addEventListener('click', () => {
-        localStorage.removeItem('CART');
+        localStorage.removeItem(placeOrderButton);
+        console.log(localStorage);
         alert('Order:\n' + JSON.stringify(cart, true, 2));
         window.location = '../';
     });

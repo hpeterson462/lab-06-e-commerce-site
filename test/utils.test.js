@@ -1,8 +1,8 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 import { findById, calcLineItem, calcOrderTotal } from '../common/utils.js';
-import cart from '../data/cart.js';
 import flowers from '../data/flowers.js';
+import cart from '../data/cart.js';
 
 const test = QUnit.test;
 
