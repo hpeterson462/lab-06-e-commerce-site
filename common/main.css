@@ -48,6 +48,10 @@ h1 {
     margin: 10px;
 }
 
+#main-img:hover {
+    opacity: 0.5;
+}
+
 button {
     display: flex;
     align-items: center;

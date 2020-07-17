@@ -17,6 +17,15 @@ function renderFlowers(flowers) {
     const pElement = document.createElement('p');
     pElement.className = 'price';
 
+    const labelElement = document.createElement('label');
+    const inputElement = document.createElement('input');
+    inputElement.type = 'number';
+    inputElement.id = 'quantity';
+    inputElement.name = 'quantity';
+    inputElement.min = 1;
+    inputElement.max = 10;
+    inputElement.append(labelElement);
+
     const usd = '$' + flowers.price.toFixed(2);
     pElement.textContent = usd;
 
@@ -26,15 +35,15 @@ function renderFlowers(flowers) {
     buttonElement.addEventListener('click', () => {
 
         const userCart = getCart();
-
+        const quantityInput = Number(inputElement.value);
         const flowersInCart = findById(userCart, flowers.id);
 
         if (flowersInCart) {
-            flowersInCart.quantity++;
+            flowersInCart.quantity = flowersInCart.quantity + quantityInput;
         } else {
             const newFlower = {
                 id: flowers.id,
-                quantity: 1
+                quantity: quantityInput
             };
             userCart.push(newFlower);
         }

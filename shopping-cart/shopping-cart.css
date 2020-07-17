@@ -28,6 +28,10 @@ a:hover {
     color: var(--color1);
 }
 
+button:hover {
+    opacity: 0.5;
+}
+
 table {
     width: 100%;
     max-width: 750px;
