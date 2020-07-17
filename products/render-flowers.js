@@ -17,35 +17,53 @@ function renderFlowers(flowers) {
     const pElement = document.createElement('p');
     pElement.className = 'price';
 
+    const labelElement = document.createElement('label');
+    labelElement.for = 'quantity';
+    labelElement.textContent = 'Quantity';
+
+    const inputElement = document.createElement('input');
+    inputElement.type = 'number';
+    inputElement.id = 'quantity';
+    inputElement.name = 'quantity';
+    inputElement.min = 1;
+    inputElement.max = 10;
+    inputElement.append(labelElement);
+
     const usd = '$' + flowers.price.toFixed(2);
     pElement.textContent = usd;
 
     const buttonElement = document.createElement('button');
     buttonElement.textContent = 'Add';
     buttonElement.value = flowers.id;
-    buttonElement.addEventLister('click', () => {
-        const cart = getCart();
+    buttonElement.addEventListener('click', () => {
 
-        const flowersInCart = findById(cart, flowers.id);
+        const userCart = getCart();
+        const quantityInput = Number(inputElement.value);
+        const flowersInCart = findById(userCart, flowers.id);
 
         if (flowersInCart) {
-            flowersInCart.quantity++;
+            flowersInCart.quantity = flowersInCart.quantity + quantityInput;
         } else {
             const newFlower = {
                 id: flowers.id,
-                quantity: 1
+                quantity: quantityInput
             };
-            cart.push(newFlower);
+            userCart.push(newFlower);
         }
-        const stringyCart = JSON.stringify('cart');
-        localStorage.setItem('cart', stringyCart);
+        const stringyCart = JSON.stringify(userCart);
+        localStorage.setItem('CART', stringyCart);
+
+        alert(`${flowers.name} has been added to your cart.`);
     });
 
     pElement.appendChild(buttonElement);
 
+    inputElement.appendChild(labelElement);
+    console.log(labelElement);
     liElement.appendChild(pElement);
 
     return liElement;
+
 }
 
 export default renderFlowers;

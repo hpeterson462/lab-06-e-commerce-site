@@ -1,8 +1,10 @@
-export function findById(productItem, cartItem) {
+import flowers from '../data/flowers.js';
+
+export function findById(flowerArray, cartItem) {
     let matchItem;
-    for (let i = 0; i < productItem.length; i++) {
-        if (cartItem === productItem[i].id) {
-            matchItem = productItem[i];
+    for (let i = 0; i < flowerArray.length; i++) {
+        if (cartItem === flowerArray[i].id) {
+            matchItem = flowerArray[i];
             return matchItem;
         }
     }
@@ -37,12 +39,24 @@ export function calcOrderTotal(cart, flowers) {
     return roundCurrency(orderTotal);
 }
 
-/*export fuction getCart(){
-    const rawCart = localStorage.getItem('cart');
+//shopping cart - if empty, initialize empty cart
+export function getCart() {
+    const emptyCart = '[]';
+    const rawCart = localStorage.getItem('CART') || emptyCart;
     let cart = JSON.parse(rawCart);
 
-    if (!cart) {
-        cart = [];
-    }
     return cart;
-}*/
+}
+
+//order confirmation
+export function orderConfirmation() {
+    const cartOrder = getCart();
+    let confirmOrder = [];
+    for (let i = 0; i < cartOrder.length; i++) {
+        const cartItem = cartOrder[i];
+        const orderedItem = findById(flowers, cartItem.id);
+        const newOrder = (`${cartItem.quantity} ${orderedItem.id}`);
+        confirmOrder.push(newOrder);
+    }
+    return confirmOrder;
+}

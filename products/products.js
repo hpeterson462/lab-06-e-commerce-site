@@ -5,6 +5,6 @@ const list = document.getElementById('flowers');
 
 for (let i = 0; i < flowers.length; i++) {
     const flowersItem = flowers[i];
-    const element = renderFlowers(flowersItem);
-    list.appendChild(element);
+    const domElement = renderFlowers(flowersItem);
+    list.appendChild(domElement);
 }

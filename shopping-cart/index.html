@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,6 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap" rel="stylesheet">
+
 
     <link rel="stylesheet" href="../common/main.css">
     <link rel="stylesheet" href="shopping-cart.css">
@@ -18,7 +20,6 @@
         <nav>
             <a href="../">Home</a>
             <a href="../products">Purchase Flowers</a>
-            <a href="./shopping-cart">Shopping Cart</a>
         </nav>
     </header>
     <main>
@@ -42,10 +43,12 @@
             </tfoot>
         </table>
         <p class="order-now-container">
-            <button>Place Order</button>
+            <button id="place-order-button">Place Order</button>
         </p>
     </main>
-    <script type="module" src="shopping-cart.js"></script>
+
+    <script type="module" src="./shopping-cart.js"></script>
+    <script src="./render-line-item.js" type="module"></script>
 </body>
 
 </html>
