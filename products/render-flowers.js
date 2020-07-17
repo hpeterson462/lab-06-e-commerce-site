@@ -18,6 +18,9 @@ function renderFlowers(flowers) {
     pElement.className = 'price';
 
     const labelElement = document.createElement('label');
+    labelElement.for = 'quantity';
+    labelElement.textContent = 'Quantity';
+
     const inputElement = document.createElement('input');
     inputElement.type = 'number';
     inputElement.id = 'quantity';
@@ -55,9 +58,12 @@ function renderFlowers(flowers) {
 
     pElement.appendChild(buttonElement);
 
+    inputElement.appendChild(labelElement);
+    console.log(labelElement);
     liElement.appendChild(pElement);
 
     return liElement;
+
 }
 
 export default renderFlowers;
